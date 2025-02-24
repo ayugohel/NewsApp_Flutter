@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_flutter/models/news_article.dart';
 import 'package:news_app_flutter/views/news_detail_screen.dart';
+import 'package:intl/intl.dart';
 
 class NewsCard extends StatelessWidget {
   final NewsArticle article;
@@ -12,6 +13,11 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+     // Format the published date
+    final DateFormat formatter = DateFormat('yyyy-MM-dd HH:mm');
+    final String formattedDate = formatter.format(DateTime.parse(article.publishedAt));
+
     return InkWell(
       onTap: () => Navigator.push(
         context,
@@ -54,7 +60,7 @@ class NewsCard extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    article.publishedAt,
+                    'Published at: $formattedDate',
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blueGrey),
                   ),
                   // SizedBox(height: 5),
