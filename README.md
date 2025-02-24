@@ -46,3 +46,6 @@ Run the app:
 - provider: State management
 - intl: Date formatting
 - url_launcher: Launching URLs in a browser
+
+### Screenshots
+<img width="30%" height="60%" src="1.png" alt="ScreenShot"/> <img width="30%" height="60%" src="2.png" alt="ScreenShot"/>
